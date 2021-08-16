@@ -10,7 +10,6 @@ export default function initializeDB() {
     useUnifiedTopology: true,
     useCreateIndex: true,
   }).then(() => {
-    console.log('connected');
     loglevel.info(`[database-handler]: Connected to ${database.mongoUrl}`);
     loglevel.info('[database-handler]: End');
   }).catch((error) => {

@@ -8,7 +8,7 @@ dotenv.config();
 const config = {
   version,
   versionIdentifier: process.env.VERSION_IDENTIFIER || 'v1',
-  environment: EnvironmentType.DEVELOPMENT, // PRODUCTION, DEVELOPMENT
+  environment: EnvironmentType.PRODUCTION, // PRODUCTION, DEVELOPMENT
   deployment: {
     host: process.env.HOST || '127.0.0.1',
     port: process.env.PORT || 3600,
