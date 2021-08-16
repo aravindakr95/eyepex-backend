@@ -15,4 +15,9 @@ carouselRouter.get('/carousel',
   fieldStateChecker,
   carouselController);
 
+carouselRouter.post('/carousel/add',
+  validate('carousel', '/add'),
+  fieldStateChecker,
+  carouselController);
+
 export default carouselRouter;

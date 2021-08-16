@@ -4,12 +4,12 @@ function dispatchResponse(res, obj) {
   const {
     success,
     message,
-    payload,
+    slides,
   } = data;
   const response = {
     success,
     message,
-    payload,
+    slides,
   };
 
   return res

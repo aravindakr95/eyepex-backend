@@ -7,17 +7,18 @@ function normalizeRequest(req = {}) {
     method: req.method,
     pathParams: req.params,
     queryParams: req.query,
+    body: req.body,
   });
 }
 
 function objectHandler(data) {
-  const { status, message, payload } = data;
+  const { status, message, slides } = data;
   return {
     status,
     data: {
       success: status === HttpResponseType.SUCCESS,
       message: message || '',
-      payload: payload || null,
+      slides: slides || null,
     },
   };
 }

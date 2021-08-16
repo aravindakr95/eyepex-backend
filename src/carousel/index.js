@@ -1,5 +1,7 @@
 import makeCarouselEndPointHandler from './carousel-endpoint';
+import makeCarouselList from './carousel.list';
 
-const carouselEndpointHandler = makeCarouselEndPointHandler();
+const carouselList = makeCarouselList();
+const carouselEndpointHandler = makeCarouselEndPointHandler({ carouselList });
 
 export default carouselEndpointHandler;

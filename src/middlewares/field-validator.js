@@ -1,4 +1,4 @@
-import { query, validationResult } from 'express-validator';
+import { body, query, validationResult } from 'express-validator';
 
 import loglevel from '../configs';
 
@@ -34,6 +34,21 @@ function carouselValidator(route) {
           .exists().withMessage('Limit query is required')
           .isNumeric()
           .withMessage('Limit query should be number'),
+      ];
+    case '/add':
+      return [
+        body('image')
+          .exists().withMessage('Image body is required')
+          .isString()
+          .withMessage('Image body should be string'),
+        body('title')
+          .exists().withMessage('Title body is required')
+          .isString()
+          .withMessage('Title body should be string'),
+        body('subTitle')
+          .exists().withMessage('Sub title body is required')
+          .isString()
+          .withMessage('Sub title body should be string'),
       ];
     case '/health':
       return [];
