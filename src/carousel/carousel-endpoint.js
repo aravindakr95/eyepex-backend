@@ -3,6 +3,7 @@ import loglevel, { version } from '../configs';
 import HttpResponseType from '../models/http/http-response-type';
 
 import defaultRouteHandler from '../helpers/http/default-route-handler';
+import customException from '../helpers/utilities/exception-handler';
 import { objectHandler } from '../helpers/utilities/request-handler';
 
 export default function makeCarouselEndPointHandler({ carouselList }) {
@@ -26,7 +27,9 @@ export default function makeCarouselEndPointHandler({ carouselList }) {
         });
       }
 
-      const slides = await carouselList.findImages(limit);
+      const slides = await carouselList.findImages(limit).catch(() => {
+        customException('Communication with database is failed');
+      });
 
       return objectHandler({
         slides,
@@ -43,10 +46,12 @@ export default function makeCarouselEndPointHandler({ carouselList }) {
       loglevel.info('[carousel-endpoint] addSlides(): Start');
       const { image, title, subTitle } = httpRequest.body;
 
-      await carouselList.insertImage({ image, title, subTitle });
+      await carouselList.insertImage({ image, title, subTitle }).catch(() => {
+        customException('Communication with database is failed');
+      });
 
       return objectHandler({
-        status: HttpResponseType.SUCCESS,
+        status: HttpResponseType.CREATED,
         message: 'Image inserted successful',
       });
     } finally {
