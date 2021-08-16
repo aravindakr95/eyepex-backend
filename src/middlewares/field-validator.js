@@ -32,7 +32,8 @@ function carouselValidator(route) {
       return [
         query('limit')
           .exists().withMessage('Limit query is required')
-          .isNumeric().withMessage('Limit query should be number')
+          .isNumeric()
+          .withMessage('Limit query should be number'),
       ];
     case '/health':
       return [];
