@@ -1,0 +1,47 @@
+{
+  "name": "eyepex-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && node dist/app.js",
+    "clean": "rimraf dist && rimraf logs",
+    "build": "npm run clean && babel src -s -D -d dist",
+    "watch": "nodemon -e js --watch src --exec \"npm run start\""
+  },
+  "contributors": [
+    {
+      "name": "Aravinda Rathnayake",
+      "email": "aravindacloud@gmail.com",
+      "url": ""
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https@github.com/aravindakr95/eyepex-backend"
+  },
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/aravindakr95/eyepex-backend/issues"
+  },
+  "homepage": "https://github.com/aravindakr95/eypex-backend#readme",
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.0",
+    "rimraf": "^3.0.2",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "nodemon": "^2.0.7"
+  }
+}
