@@ -1,5 +1,5 @@
 ## :copyright: eyepex-backend
-> _Demonstration of Carousel data manipulation behavior by using Restful APIs._
+> _Demonstration of CRUD behavior by using Restful APIs._
 
 ## :book: Table of Contents
    <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -7,6 +7,7 @@
 
 - [Prerequisites](#sparkles-prerequisites)
 - [Getting started](#sparkles-getting-started)
+- [Available Routes](#sparkles-available-routes)
 - [How to use](#sparkles-how-to-use)
 - [Technologies](#sparkles-technologies)
 - [License](#sparkles-license)
@@ -17,12 +18,22 @@
 
 Proceed with next steps if your platform meet the following prerequisite.
 
-- Install [Node.js](https://nodejs.org/en/) (14.16.0 LTS) on your device.
+- Install [Node.js](https://nodejs.org/en/) and Mongo DB [MongoDB](https://www.mongodb.com/) on your device.
 
 ## :sparkles: Getting Started
 Run the following command under `eyepex-backend` directory to install dependencies.
  ```
  npm install
+ ```
+
+## :sparkles: Available Routes
+The following routes are available in the application.
+ ```
+ POST /v1/api/carousel/add
+ BODY: { "image": "some_image_url", "title": "some_image_title", "subTitle": "some_image_title" }
+ 
+ GET /v1/api/carousel
+ QUERY PARAMETERS: limit=<NUMBER>
  ```
 
 ## :sparkles: How to Use
