@@ -1,0 +1,7 @@
+Backend
+
+01. Install Dependencies: npm i
+02. Run the Project: npm run watch
+03. Add one or more data to the database using the POST request (refer github readme for the API endpoint and payload)
+
+PORT: 3600
