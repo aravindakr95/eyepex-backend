@@ -23,7 +23,13 @@ Proceed with next steps if your platform meet the following prerequisite.
 ## :sparkles: Getting Started
 Run the following command under `eyepex-backend` directory to install dependencies.
  ```
- npm install
+ npm install && npm run watch
+ ```
+
+Import sample image dataset to the mongo database using the `Assets/images-data.json` file.
+ ```
+DATABASE NAME: EYEPEX
+COLLECTION NAME: images-data
  ```
 
 ## :sparkles: Available Routes
